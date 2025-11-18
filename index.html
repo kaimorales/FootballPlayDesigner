@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Play Designer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Play Designer</h2>
+            
+            <!-- Personnel Section -->
+            <section class="section">
+                <h3>Personnel</h3>
+                <select id="personnel-select">
+                    <option value="11">11 Personnel (1 RB, 1 TE, 3 WR)</option>
+                    <option value="12">12 Personnel (1 RB, 2 TE, 2 WR)</option>
+                    <option value="21">21 Personnel (2 RB, 1 TE, 2 WR)</option>
+                    <option value="10">10 Personnel (1 RB, 0 TE, 4 WR)</option>
+                    <option value="13">13 Personnel (1 RB, 3 TE, 1 WR)</option>
+                    <option value="22">22 Personnel (2 RB, 2 TE, 1 WR)</option>
+                </select>
+                <button id="load-offense-btn" class="btn btn-primary">Load Offense</button>
+            </section>
+
+            <!-- Defense Section -->
+            <section class="section">
+                <h3>Defense</h3>
+                <select id="defense-select">
+                    <option value="">Select Coverage...</option>
+                    <option value="cover1">Cover 1 (Man Free)</option>
+                    <option value="cover2">Cover 2 (Zone)</option>
+                    <option value="cover3">Cover 3 (Zone)</option>
+                </select>
+                <button id="load-defense-btn" class="btn btn-primary">Load Defense</button>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="show-zones-toggle" checked>
+                    Show Zone Coverage
+                </label>
+            </section>
+
+            <!-- Route Tools -->
+            <section class="section">
+                <h3>Route Tools</h3>
+                <div class="route-buttons">
+                    <button class="route-btn" data-route="go">Go</button>
+                    <button class="route-btn" data-route="slant">Slant</button>
+                    <button class="route-btn" data-route="post">Post</button>
+                    <button class="route-btn" data-route="corner">Corner</button>
+                    <button class="route-btn" data-route="out">Out</button>
+                    <button class="route-btn" data-route="in">In</button>
+                    <button class="route-btn" data-route="drag">Drag</button>
+                    <button class="route-btn" data-route="bubble">Bubble</button>
+                    <button class="route-btn active" data-route="custom">Custom</button>
+                </div>
+                <p class="instruction-text">Select a route type, then click on an offensive player to draw</p>
+            </section>
+
+            <!-- Save/Load -->
+            <section class="section">
+                <h3>Save Play</h3>
+                <input type="text" id="play-name-input" placeholder="Play name...">
+                <button id="save-play-btn" class="btn btn-success">Save Play</button>
+            </section>
+
+            <!-- Saved Plays Library -->
+            <section class="section">
+                <h3>Saved Plays</h3>
+                <div id="saved-plays-list" class="saved-plays-list">
+                    <p class="empty-state">No saved plays yet</p>
+                </div>
+            </section>
+        </aside>
+
+        <!-- Main Field Area -->
+        <main class="field-container">
+            <canvas id="football-field"></canvas>
+            
+            <!-- Bottom Toolbar -->
+            <div class="toolbar">
+                <button id="clear-routes-btn" class="btn btn-secondary">Clear Routes</button>
+                <button id="clear-all-btn" class="btn btn-secondary">Clear All</button>
+                <button id="undo-btn" class="btn btn-secondary">Undo</button>
+                <button id="export-btn" class="btn btn-primary">Export as PNG</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- html2canvas CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <!-- Our Scripts -->
+    <script src="routes.js"></script>
+    <script src="defense.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
