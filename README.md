@@ -15,6 +15,5 @@ Save and load plays
 
 Export plays as images
 
-📸 Screenshot
 <img width="1704" height="994" alt="Screenshot 2025-11-17 at 9 22 03 PM" src="https://github.com/user-attachments/assets/f658ff45-e1fc-40de-a457-ed8eb688bb23" />
 
